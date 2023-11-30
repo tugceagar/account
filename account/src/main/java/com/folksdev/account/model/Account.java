@@ -23,8 +23,8 @@ public class Account {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
-    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
-    private Set<Transaction> transaction;
+//    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
+//    private Set<Transaction> transaction;
 
 
 }
