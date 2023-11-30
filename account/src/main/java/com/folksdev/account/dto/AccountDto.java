@@ -1,16 +1,14 @@
 package com.folksdev.account.dto;
 
-import com.folksdev.account.model.Customer;
-import com.folksdev.account.model.Transaction;
-import org.hibernate.mapping.Set;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 public class AccountDto {
     private String id;
     private BigDecimal balance;
     private LocalDateTime creationDate;
-    private CustomerDto customer;
+    private AccountCustomerDto customer;
     private Set<TransactionDto> transactions;
 }
