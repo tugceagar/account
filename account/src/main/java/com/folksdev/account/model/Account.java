@@ -1,6 +1,8 @@
 package com.folksdev.account.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.Getter;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.math.BigDecimal;
@@ -9,6 +11,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
+@Getter
 public class Account {
 
     @Id

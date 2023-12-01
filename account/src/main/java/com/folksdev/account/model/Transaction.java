@@ -1,6 +1,8 @@
 package com.folksdev.account.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.Getter;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.math.BigDecimal;
@@ -8,6 +10,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
+@Getter
 public class Transaction {
 
     @Id

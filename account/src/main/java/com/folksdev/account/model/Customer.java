@@ -1,12 +1,14 @@
 package com.folksdev.account.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
+@Getter
 public class Customer {
 
     @Id
