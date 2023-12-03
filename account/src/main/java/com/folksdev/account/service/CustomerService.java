@@ -15,6 +15,6 @@ public class CustomerService {
 
     protected Customer findById (String id){
         return customerRepository.findById(id)
-                .orElseThrow(()->new CustomerNotFoundException("Customer could not found by id: " + id))
+                .orElseThrow(()->new CustomerNotFoundException("Customer could not found by id: " + id));
     }
 }
