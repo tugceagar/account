@@ -1,12 +1,12 @@
 package com.folksdev.account.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.Getter;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -17,7 +17,7 @@ public class Account {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    private String id;
+    private String id = "";
 
     private BigDecimal balance = BigDecimal.ZERO;
 
@@ -28,7 +28,13 @@ public class Account {
     private Customer customer;
 
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
-    private Set<Transaction> transaction;
+    private Set<Transaction> transaction = new HashSet();
+
+    public Account(Customer customer, BigDecimal initialCredit, LocalDateTime now) {
+        this.customer = customer;
+        this.balance =  initialCredit ;
+        this.creationDate = now;
+    }
 
     @Override
     public boolean equals(Object o) {

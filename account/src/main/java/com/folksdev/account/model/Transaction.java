@@ -1,7 +1,6 @@
 package com.folksdev.account.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.Getter;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -25,6 +24,11 @@ public class Transaction {
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
     @JoinColumn(name = "account_id", nullable = false)
     private Account account;
+
+    public Transaction(BigDecimal amount, Account account) {
+        this.amount = amount;
+        this.account = account;
+    }
 
     @Override
     public boolean equals(Object o) {
