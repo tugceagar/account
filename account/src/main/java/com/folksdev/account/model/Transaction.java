@@ -23,7 +23,7 @@ public class Transaction {
     private TransactionType transactionType = TransactionType.INITIAL;
 
     private BigDecimal amount;
-    private LocalDateTime transactionDate;
+    private LocalDateTime transactionDate = LocalDateTime.now();
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "account_id", nullable = false)
