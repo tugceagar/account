@@ -1,7 +1,10 @@
 package com.folksdev.account.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.util.Objects;
@@ -9,6 +12,9 @@ import java.util.Set;
 
 @Entity
 @Getter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Customer {
 
     @Id
