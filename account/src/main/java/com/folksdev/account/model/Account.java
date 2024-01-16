@@ -31,7 +31,7 @@ public class Account {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
-    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Transaction> transaction = new HashSet();
 
     public Account(Customer customer, BigDecimal initialCredit, LocalDateTime now) {
