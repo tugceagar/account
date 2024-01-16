@@ -1,7 +1,10 @@
 package com.folksdev.account.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.math.BigDecimal;
@@ -9,7 +12,9 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
-@Getter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Transaction {
 
     @Id
@@ -21,7 +26,7 @@ public class Transaction {
     private BigDecimal amount;
     private LocalDateTime transactionDate;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "account_id", nullable = false)
     private Account account;
 
